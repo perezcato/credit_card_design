@@ -62,7 +62,7 @@ export default function CardDesign() {
   return (
     <div className="relative h-screen w-screen bg-gray-200 flex items-center justify-center">
       <div className="w-full flex h-[650px] bg-white shadow-md max-w-sm rounded-3xl overflow-hidden relative">
-        <div className="w-6/12 h-full" style={{backgroundImage: `url(${background})`}}>
+        <div className="w-6/12 h-full bg-no-repeat bg-cover bg-center" style={{backgroundImage: `url(${background})`}}>
           <img className="p-10 " src={pin}/>
         </div>
 
