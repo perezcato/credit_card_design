@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React, {useState} from 'react';
 import image from "../assets/images/master.jpg"
 import other from "../assets/images/other.png"
 
@@ -17,84 +17,80 @@ import pollard from "../assets/images/Pollard.png"
 import pol from "../assets/images/pol.png"
 import brett from "../assets/images/brett.png"
 import bret from "../assets/images/bret.png"
+import BackgroundPicker from '../components/background-picker';
 
+const backgrounds = [
+  {
+    background: yel,
+    name: 'kadri',
+  },
+  {
+    background: gren,
+    name: 'Fox',
+  },
+  {
+    background: master,
+    name: 'Tuipa',
+  },
+  {
+    background: mad,
+    name: 'Madison',
+  },
+  {
+    background: gust,
+    name: 'Gustavo',
+  },
+  {
+    background: bayy,
+    name: 'Bay',
+  },
+  {
+    background: pol,
+    name: 'Pollard',
+  },
+  {
+    background: bret,
+    name: 'Brett',
+  }
+]
 
 
 export default function CardDesign() {
 
   const [background, setBackground] = useState(master)
- 
-    return (
-        <div className=" md:w-11/12 2xl:w-4/5 m-auto flex">
 
-          <div className="w-full flex h-screen items-center max-w-lg mx-auto px-4 py-20 relative">
-          <div className="border md:w-2/3 2xl:w-4/5 flex h-3/4 bg-white overflow-y-hidden max-h-full relative rounded-3xl">
-           <div className="w-6/12 h-full" style={{backgroundImage: `url(${background})`}}>
-            <img className="p-10 " src={pin} alt="" />
-           </div>
+  return (
+    <div className="relative h-screen w-screen bg-gray-200 flex items-center justify-center">
+      <div className="w-full flex h-[650px] bg-white shadow-md max-w-sm rounded-3xl overflow-hidden relative">
+        <div className="w-6/12 h-full" style={{backgroundImage: `url(${background})`}}>
+          <img className="p-10 " src={pin}/>
+        </div>
 
-           <div className="w-6/12 h-full justify-center">
-            <div className="w-full h-full flex flex-col justify-between">
-                <div className="-rotate-90 mx-10  my-16 w-full">
-                    <p className="text-xs text-gray-500">JOHN DOE DOE</p>
-                    <p>1234 5678 4526 9999</p>
-                </div>
-                <img className="absolute bottom-0 right-0 h-16 w-14 m-6" src={masterlogo} alt="" />
+        <div className="w-1/2 h-full justify-center">
+          <div className="w-full h-full flex flex-col justify-between">
+            <div className="-rotate-90 mx-8 my-16 w-full">
+              <p className="text-xs text-gray-500">JOHN DOE DOE</p>
+              <p>1234 5678 4526 9999</p>
             </div>
-           </div>
-
-          </div>
-          <div className="mt-auto p-5 h-2/5">
-           
+            <img className="absolute bottom-0 right-0 h-16 w-14 mx-8 my-8" src={masterlogo} alt=""/>
           </div>
         </div>
+      </div>
 
-        <div className="w-full p-10 bg-gray-800 md:p-20">
-            <h3 className="py-4 text-white text-xl font-bold">Select card design</h3>
-            <p className="pb-14 text-lg text-gray-300">Play around with our card choices</p>
-            <div className="w-full md:w-3/6 flex flex-col lg:grid gap-4 lg:grid-cols-1 xl:grid-cols-2 ">
-            <div onClick={()=>setBackground(yel)} className="md:hover:bg-gray-800 hover:border hover:border-gray-700 cursor-pointer w-full bg-gray-500 text-center rounded-lg"> 
-                  <img className="mt-6 w-20 h-3/6 mx-auto rounded-lg" src={yel} alt="" />  
-                  <p className=" pt-2 text-white">Kadri</p>
-                </div>
-                <div onClick={()=>setBackground(gren)} className="md:hover:bg-gray-800 hover:border hover:border-gray-700 cursor-pointer w-full bg-gray-500 text-center rounded-lg"> 
-                  <img className="mt-6 w-20 h-3/6  mx-auto rounded-lg" src={gren} alt="" />  
-                  <p className=" pt-2 text-white">Fox</p>
-                </div>
-                
-                <div onClick={()=>setBackground(master)} className="md:hover:bg-gray-800 hover:border hover:border-gray-700 cursor-pointer w-full bg-gray-500 text-center rounded-lg"> 
-                  <img className="mt-6 w-20 h-3/6 mx-auto rounded-lg" src={image} alt="" />  
-                  <p className=" pt-2 text-white">Tuipa</p>
-                </div>
-                <div onClick={()=>setBackground(mad)} className="md:hover:bg-gray-800 hover:border hover:border-gray-700 cursor-pointer w-full bg-gray-500 text-center rounded-lg"> 
-                  <img className="mt-6 w-20 h-3/6  mx-auto rounded-lg" src={Madison} alt="" />  
-                  <p className=" pt-2 text-white">Madison</p>
-                </div>
-             
-                <div onClick={()=>setBackground(gust)} className="md:hover:bg-gray-800 hover:border hover:border-gray-700 cursor-pointer w-full bg-gray-500 text-center rounded-lg"> 
-                  <img className="mt-6 w-20 h-3/6  mx-auto rounded-lg" src={gustavo} alt="" />  
-                  <p className=" pt-2 text-white">Gustavo</p>
-                </div>
-
-                <div onClick={()=>setBackground(bayy)} className="md:hover:bg-gray-800 hover:border hover:border-gray-700 cursor-pointer w-full bg-gray-500 text-center rounded-lg"> 
-                  <img className="mt-6 w-20 h-3/6  mx-auto rounded-lg" src={bay} alt="" />  
-                  <p className=" pt-2 text-white">Bay</p>
-                </div>
-
-                 <div onClick={()=>setBackground(pol)} className="md:hover:bg-gray-800 hover:border hover:border-gray-700 cursor-pointer w-full bg-gray-500 text-center rounded-lg"> 
-                  <img className="mt-6 w-20 h-3/6 mx-auto rounded-lg" src={pollard} alt="" />  
-                  <p className=" pt-2 text-white">Pollard</p>
-                </div>
-                <div onClick={()=>setBackground(bret)} className="md:hover:bg-gray-800 hover:border hover:border-gray-700 cursor-pointer w-full bg-gray-500 text-center rounded-lg"> 
-                  <img className="mt-6 w-20 h-3/6  mx-auto rounded-lg" src={brett} alt="" />  
-                  <p className=" pt-2 text-white">Brett</p>
-                </div>
-             
-             
-
-             
-            </div>
+      <div className="absolute right-10 w-[500px] space-y-10 px-12 py-10 bg-gray-800">
+        <div>
+          <h3 className=" text-white text-xl font-bold">Select card design</h3>
+          <p className="text-lg text-gray-300">Play around with our card choices</p>
         </div>
+
+        <div className="w-full flex flex-col lg:grid gap-6 lg:grid-cols-1 xl:grid-cols-2 ">
+          {
+            backgrounds.map((background, i) => (
+              <BackgroundPicker key={i} background={background.background} name={background.name}
+                                onClick={() => setBackground(background.background)}/>))
+          }
         </div>
-    )
+      </div>
+    </div>
+  )
 }  
