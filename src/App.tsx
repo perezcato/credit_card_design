@@ -7,6 +7,7 @@ import CardDesigns from "./pages/CardDesign"
 function App() {
   return (
     <div className="App">
+      
       <CardDesigns />
     </div>
   );
