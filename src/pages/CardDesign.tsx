@@ -1,4 +1,6 @@
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
+import ToggleContext from "../store/toggle-context"
+import {CreditCard} from "../components/CreditCard"
 import image from "../assets/images/master.jpg"
 import other from "../assets/images/other.png"
 
@@ -57,26 +59,13 @@ const backgrounds = [
 
 export default function CardDesign() {
 
-  const [background, setBackground] = useState(master)
+  const ctx = useContext(ToggleContext);
+
+  const [background, setBackground] = useState(ctx)
 
   return (
     <div className="relative h-screen w-screen bg-gray-200 flex items-center justify-center">
-      <div className="w-full flex h-[650px] bg-white shadow-md max-w-sm rounded-3xl overflow-hidden relative">
-        <div className="w-6/12 h-full bg-no-repeat bg-cover bg-center" style={{backgroundImage: `url(${background})`}}>
-          <img className="p-10 " src={pin}/>
-        </div>
-
-        <div className="w-1/2 h-full justify-center">
-          <div className="w-full h-full flex flex-col justify-between">
-            <div className="-rotate-90 mx-8 my-16 w-full">
-              <p className="text-xs text-gray-500">JOHN DOE DOE</p>
-              <p>1234 5678 4526 9999</p>
-            </div>
-            <img className="absolute bottom-0 right-0 h-16 w-14 mx-8 my-8" src={masterlogo} alt=""/>
-          </div>
-        </div>
-      </div>
-
+      <CreditCard background={background}/>
       <div className="absolute right-10 w-[500px] space-y-10 px-12 py-10 bg-gray-800">
         <div>
           <h3 className=" text-white text-xl font-bold">Select card design</h3>
